@@ -9,4 +9,6 @@ ENTRYPOINT ["./entrypoint.sh"]
 COPY ./api-server/app /app
 COPY ./api-server/database /database
 
-CMD ["/bin/bash"]
+COPY ./command.sh ./
+
+CMD ["/bin/bash", "command.sh"]
