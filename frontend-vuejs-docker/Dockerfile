@@ -11,7 +11,7 @@ COPY ./frontend-vue/package.json ./
 RUN npm install
 
 COPY ./frontend-vue/ ./
-RUN npm build
+RUN npm run build
 
 # The build directory is going to be created in working directory /app
 # The path to build directory is /app/build
@@ -22,7 +22,7 @@ FROM nginx
 # Required for AWS Elastic Beanstalk
 EXPOSE 3000
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=0 /app/dist /usr/share/nginx/html
 
 # We don't need start command
 # The default start command of the nginx container starts nginx
