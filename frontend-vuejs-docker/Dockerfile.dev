@@ -1,0 +1,13 @@
+FROM node:alpine
+
+#RUN mkdir /app
+WORKDIR /app
+
+COPY ./frontend-vue ./
+RUN pwd; ls -l ; pwd
+RUN npm install
+
+# We should not change above without compulsion
+
+#CMD ping www.google.com -i 5
+CMD ["npm", "run", "serve"]
