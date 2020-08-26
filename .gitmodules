@@ -1,0 +1,3 @@
+[submodule "poppler-pandas"]
+	path = poppler-pandas
+	url = ./poppler-pandas/
