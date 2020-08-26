@@ -1,0 +1,16 @@
+# Usage:
+# docker build -t jquery -f Dockerfile.dev .
+# docker run -it --name jquery jquery
+#
+FROM python:3.7-slim
+
+# set environment variables
+# ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /html
+WORKDIR /html
+
+COPY ./frontend-jquery ./
+
+CMD python -m http.server 8070
