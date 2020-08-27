@@ -1,7 +1,7 @@
 version: '3'
 services:
 
-  api:
+  vuejs_server:
     build:
       dockerfile: Dockerfile.dev
       context: .

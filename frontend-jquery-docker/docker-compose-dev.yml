@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app:
+  jquery_server:
     build:
       dockerfile: Dockerfile.dev
       context: .
