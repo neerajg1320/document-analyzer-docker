@@ -27,7 +27,7 @@ APP_DATABASE_EXISTS=`PGPASSWORD=Postgres123 psql -h db -U postgres -c "\l" |grep
 echo "APP_DATABASE_EXISTS: $APP_DATABASE_EXISTS"
 
 ## If the database exists then delete it
-FORCE_DELETE=1
+FORCE_DELETE=0
 if [[ $APP_DATABASE_EXISTS -gt 0  && $FORCE_DELETE -gt 0 ]]
 then
     DELETE_DATABASE_COMMAND="'drop database $APP_DATABASE_NAME;'"

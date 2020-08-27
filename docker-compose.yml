@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  jquery_server:
+    image: neeraj76/analyzer-jquery-server
+    ports:
+    - 4000:4000
+
+  vuejs_server:
+    image: neeraj76/analyzer-vuejs-server
+    ports:
+    - 3000:3000
+
+  app:
+    image: neeraj76/analyzer-api-server
+    ports:
+    - "8000:8000"
+    environment:
+    - DB_HOST=db
+    - DB_NAME=app
+    - DB_USER=postgres
+    - DB_PASS=Postgres123
+    depends_on:
+    - db
+
+  db:
+    image: postgres:10-alpine
+    environment:
+    - POSTGRES_DB=app
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=Postgres123
