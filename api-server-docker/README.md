@@ -1,3 +1,17 @@
+
+## For Developement process (docker-compose-dev.yml)
+docker-compose -f docker-compose-dev.yml up --build
+ - During development the code is not copied into the images
+ - The code is mounted using volume
+ - The database script is also mounted
+ 
+## For production build (docker-compose.yml)
+docker-compose up --build
+ - The code is copied into the images
+ - The database script is copied into the image
+
+
+
 docker-compose -f docker-compose-dev.yml up --build
 ##
 Two containers are created:
