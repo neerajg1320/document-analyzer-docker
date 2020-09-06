@@ -1043,7 +1043,7 @@ COPY public.authtoken_token (key, created, user_id) FROM stdin;
 --
 
 COPY public.core_datastoreinfo (id, title, parameters, type_id, user_id) FROM stdin;
-1	Postgres_Store	{"user":"postgres","password":"Postgres123","host":"localhost","port":"5432","database":"docminer"}	2	1
+1	Postgres_Store	{"user":"postgres","password":"Postgres123","host":"db","port":"5432","database":"docminer"}	2	1
 \.
 
 
