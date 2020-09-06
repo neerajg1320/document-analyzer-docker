@@ -5,11 +5,21 @@ docker-compose -f docker-compose-dev.yml up --build
  - The code is mounted using volume
  - The database script is also mounted
  
-## For production build (docker-compose.yml)
+## For creating production build (docker-compose.yml)
 docker-compose up --build
+docker commit api-server-docker_app_1
+docker tag <hash> neeraj76/analyzer-api-server
+docker push neeraj76/analyzer-api-server
+
  - The code is copied into the images
  - The database script is copied into the image
-
+ - We create an image out of the container.
+ - We upload the created image to docker hub.
+ 
+## For using production build (docker-compose-deploy.yml)
+docker-compose -f docker-compose-deploy.yml up --build
+    - The image is directly downloaded from docker hub.
+    
 
 
 docker-compose -f docker-compose-dev.yml up --build
